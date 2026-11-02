@@ -26,14 +26,34 @@
       "targets": [
         {
           "expr": "up{job=\"a3-jogos\"}",
-          "refId": "A"
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "range": true
         }
       ],
       "fieldConfig": {
         "defaults": {
           "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
         }
-      }
+      },
+      "pluginVersion": "11.3.0"
     },
     {
       "id": 2,
@@ -52,14 +72,34 @@
       "targets": [
         {
           "expr": "sum(rate(http_server_requests_seconds_count{job=\"a3-jogos\"}[1m]))",
-          "refId": "A"
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "range": true
         }
       ],
       "fieldConfig": {
         "defaults": {
           "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
         }
-      }
+      },
+      "pluginVersion": "11.3.0"
     },
     {
       "id": 3,
@@ -78,14 +118,34 @@
       "targets": [
         {
           "expr": "sum(rate(http_server_requests_seconds_sum{job=\"a3-jogos\"}[1m])) / sum(rate(http_server_requests_seconds_count{job=\"a3-jogos\"}[1m]))",
-          "refId": "A"
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "range": true
         }
       ],
       "fieldConfig": {
         "defaults": {
           "unit": "s"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
         }
-      }
+      },
+      "pluginVersion": "11.3.0"
     },
     {
       "id": 4,
@@ -104,14 +164,34 @@
       "targets": [
         {
           "expr": "sum(jvm_memory_used_bytes{job=\"a3-jogos\",area=\"heap\"})",
-          "refId": "A"
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "range": true
         }
       ],
       "fieldConfig": {
         "defaults": {
           "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
         }
-      }
+      },
+      "pluginVersion": "11.3.0"
     },
     {
       "id": 5,
@@ -130,14 +210,40 @@
       "targets": [
         {
           "expr": "jogos_finalizados_total{job=\"a3-jogos\"}",
-          "refId": "A"
+          "refId": "A",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "range": true
         }
       ],
       "fieldConfig": {
         "defaults": {
           "unit": "short"
+        },
+        "overrides": []
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
         }
-      }
+      },
+      "pluginVersion": "11.3.0"
     }
-  ]
+  ],
+  "annotations": {
+    "list": []
+  },
+  "templating": {
+    "list": []
+  }
 }
