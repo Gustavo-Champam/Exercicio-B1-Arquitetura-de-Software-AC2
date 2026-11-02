@@ -37,4 +37,4 @@ Para observabilidade com Docker, pare a execução Java manual e use `docker com
 - evidencias/grafana.png, grafana-contador.png e prometheus.png: monitoramento real.
 
 ## Limites
-H2 não é banco durável de produção; SmsLog não é provedor real; sem autenticação nesta API didática. Não há controle de reenvio de SMS e e-mail/idempotência. A cobertura se refere ao pacote lab, não ao ZIP original. Antes da apresentação, faremos a revisão em dupla dos testes e das decisões.
+H2 não é banco durável de produção; SmsLog não é provedor real; sem autenticação nesta API didática. Não há controle de reenvio de SMS e e-mail/idempotência. 
