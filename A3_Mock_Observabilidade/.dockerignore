@@ -1,0 +1,5 @@
+.git
+.idea
+evidencias
+target/*
+!target/a3-jogos-1.0.0.jar

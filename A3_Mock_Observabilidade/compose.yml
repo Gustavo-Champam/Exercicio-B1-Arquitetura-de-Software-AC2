@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports: ['127.0.0.1:8083:8080']
+  prometheus:
+    image: prom/prometheus:v3.0.1
+    ports: ['127.0.0.1:9093:9090']
+    volumes: ['./observabilidade/prometheus.yml:/etc/prometheus/prometheus.yml:ro']
+  grafana:
+    image: grafana/grafana:11.3.0
+    ports: ['127.0.0.1:3003:3000']
+    volumes:
+      - ./observabilidade/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml:ro
+      - ./observabilidade/provider.yml:/etc/grafana/provisioning/dashboards/provider.yml:ro
+      - ./observabilidade/dashboard.json:/var/lib/grafana/dashboards/a3.json:ro

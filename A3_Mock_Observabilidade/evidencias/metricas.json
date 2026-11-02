@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"127.0.0.1:8083","job":"a3-jogos"},"value":[1793041036.193,"1"]},{"metric":{"__name__":"jogos_finalizados_total","instance":"127.0.0.1:8083","job":"a3-jogos"},"value":[1793041036.193,"10"]}]}}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FinalizaJogo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">a3-jogos</a> &gt; <a href="index.source.html" class="el_package">lab</a> &gt; <span class="el_source">FinalizaJogo.java</span></div><h1>FinalizaJogo.java</h1><pre class="source lang-java linenums">package lab;
+import java.time.*;
+import java.time.temporal.TemporalAdjusters;
+import java.util.List;
+import org.springframework.stereotype.Service;
+@Service public class FinalizaJogo {
+ private final SalvarLote banco;
+ private final Sms sms;
+ private final Email email;
+<span class="fc" id="L10"> public FinalizaJogo(SalvarLote banco,Sms sms,Email email) { this.banco=banco; this.sms=sms; this.email=email; }</span>
+ public int finalizar(List&lt;Jogo&gt; jogos, LocalDate hoje) {
+<span class="fc" id="L12">  LocalDate fim=hoje.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));</span>
+<span class="fc" id="L13">  LocalDate inicio=fim.minusWeeks(1);</span>
+<span class="fc bfc" id="L14" title="All 4 branches covered.">  List&lt;Finalizado&gt; lote=jogos.stream().filter(j -&gt; !j.data().isBefore(inicio) &amp;&amp; j.data().isBefore(fim))</span>
+<span class="fc" id="L15">   .map(j -&gt; new Finalizado(j.id(),j.vencedor())).toList();</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">  if(lote.isEmpty()) return 0;</span>
+<span class="fc" id="L17">  banco.salvar(lote);</span>
+  // Nao anotar este metodo com @Transactional: SMS deve ocorrer apos o commit do lote.
+<span class="fc" id="L19">  lote.forEach(sms::enviar);</span>
+<span class="fc" id="L20">  lote.forEach(email::enviar);</span>
+<span class="fc" id="L21">  return lote.size();</span>
+ }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -35,7 +35,14 @@ Jenkinsfile: agente Linux, tool jdk17, Docker/Compose e Python. Testes precedem 
 ## Repositório e entrega
 Repositório da equipe: https://github.com/Gustavo-Champam/Exerc-cio-B1---Arquitetura-de-Software-AC2
 
-O relatório e as evidências registram os experimentos de 26/10/2026. A publicação foi preparada em 02/11/2026. A execução no Jenkins e a integração ao MVP da AC1 ainda precisam ser verificadas. O A3 é entregue separadamente.
+O relatório e as evidências registram os experimentos de 26/10/2026. A publicação foi preparada em 02/11/2026. A execução no Jenkins e a integração ao MVP da AC1 ainda precisam ser verificadas. O A3 está na pasta A3_Mock_Observabilidade, com código, testes e instruções de configuração dos provedores.
 
 ## Referências
 Enunciado Exercicio_B1_Architecture_Lab_6_Desafios_Reavaliado.docx; exemplos de monólito em camadas/modular; guia FURPS+ e templates C4/ADR fornecidos. Conceitos C4: https://c4model.com/ ; transações Spring: https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html
+
+
+## A3 Mock e Observabilidade
+
+[Projeto A3](A3_Mock_Observabilidade/README.md) | [Configurar Brevo e Twilio Trial](A3_Mock_Observabilidade/CONFIGURAR_PROVEDORES.md)
+
+Implementamos SMS e e-mail após persistência, adapters Brevo e Twilio Trial e testes sem envios externos. O build passou em 20 testes com 100% de cobertura de linhas e ramos. O uso real exige credenciais locais; o trial Twilio aceita apenas conteúdo predefinido. Nenhuma credencial real é versionada. Relatórios PDF e capturas anteriores são históricos; os logs e o JaCoCo HTML registram o build atual.
