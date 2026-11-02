@@ -1,0 +1,88 @@
+{
+  "base_commit": "5095ff220d9e31f03622ed417023aa6283052a44",
+  "antes": {
+    "src/main/java/br/com/educacao/gamificada/dto/RecompensaResponse.java": [
+      "import br.com.educacao.gamificada.entity.RecompensaEntity;",
+      "import java.time.Instant;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/entity/RecompensaEntity.java": [
+      "import jakarta.persistence.*;",
+      "import java.time.Instant;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/repository/RecompensaRepository.java": [
+      "import br.com.educacao.gamificada.entity.RecompensaEntity;",
+      "import org.springframework.data.jpa.repository.JpaRepository;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/service/RecompensaService.java": [
+      "import br.com.educacao.gamificada.domain.Plano;",
+      "import br.com.educacao.gamificada.dto.RecompensaResponse;",
+      "import br.com.educacao.gamificada.entity.RecompensaEntity;",
+      "import br.com.educacao.gamificada.event.AlunoPromovidoEvent;",
+      "import br.com.educacao.gamificada.repository.*;",
+      "import org.springframework.context.event.EventListener;",
+      "import org.springframework.http.HttpStatus;",
+      "import org.springframework.stereotype.Service;",
+      "import org.springframework.transaction.annotation.Transactional;",
+      "import org.springframework.web.server.ResponseStatusException;",
+      "import java.util.List;"
+    ]
+  },
+  "depois": {
+    "src/main/java/br/com/educacao/gamificada/ranking/api/RankingController.java": [
+      "import java.util.List;",
+      "import org.springframework.web.bind.annotation.*;",
+      "import br.com.educacao.gamificada.ranking.application.RankingService;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/ranking/application/RankingPort.java": [
+      "import java.util.List;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/ranking/application/RankingService.java": [
+      "import java.util.*;",
+      "import org.springframework.stereotype.Service;",
+      "import br.com.educacao.gamificada.ranking.domain.Pontuacao;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/ranking/domain/Pontuacao.java": [],
+    "src/main/java/br/com/educacao/gamificada/ranking/internal/RankingJpaAdapter.java": [
+      "import java.util.List;",
+      "import org.springframework.stereotype.Component;",
+      "import org.springframework.transaction.annotation.Transactional;",
+      "import br.com.educacao.gamificada.repository.AlunoRepository;",
+      "import br.com.educacao.gamificada.ranking.application.RankingPort;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/recompensa/dto/RecompensaResponse.java": [
+      "import br.com.educacao.gamificada.dto.CriarAlunoRequest;",
+      "import br.com.educacao.gamificada.dto.ConclusaoResponse;",
+      "import br.com.educacao.gamificada.dto.ConcluirCursoRequest;",
+      "import br.com.educacao.gamificada.dto.AlunoResponse;",
+      "import br.com.educacao.gamificada.recompensa.entity.RecompensaEntity;",
+      "import java.time.Instant;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/recompensa/entity/RecompensaEntity.java": [
+      "import br.com.educacao.gamificada.entity.ConclusaoCursoEntity;",
+      "import br.com.educacao.gamificada.entity.AlunoEntity;",
+      "import jakarta.persistence.*;",
+      "import java.time.Instant;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/recompensa/repository/RecompensaRepository.java": [
+      "import br.com.educacao.gamificada.repository.ConclusaoCursoRepository;",
+      "import br.com.educacao.gamificada.repository.AlunoRepository;",
+      "import br.com.educacao.gamificada.recompensa.entity.RecompensaEntity;",
+      "import org.springframework.data.jpa.repository.JpaRepository;"
+    ],
+    "src/main/java/br/com/educacao/gamificada/recompensa/service/RecompensaService.java": [
+      "import br.com.educacao.gamificada.service.AlunoService;",
+      "import br.com.educacao.gamificada.domain.Plano;",
+      "import br.com.educacao.gamificada.recompensa.dto.RecompensaResponse;",
+      "import br.com.educacao.gamificada.recompensa.entity.RecompensaEntity;",
+      "import br.com.educacao.gamificada.event.AlunoPromovidoEvent;",
+      "import br.com.educacao.gamificada.recompensa.repository.RecompensaRepository;",
+      "import br.com.educacao.gamificada.repository.*;",
+      "import org.springframework.context.event.EventListener;",
+      "import org.springframework.http.HttpStatus;",
+      "import org.springframework.stereotype.Service;",
+      "import org.springframework.transaction.annotation.Transactional;",
+      "import org.springframework.web.server.ResponseStatusException;",
+      "import java.util.List;"
+    ]
+  }
+}

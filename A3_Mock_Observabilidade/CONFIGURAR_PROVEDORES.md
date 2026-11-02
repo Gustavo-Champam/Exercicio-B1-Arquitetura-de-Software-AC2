@@ -20,7 +20,7 @@ O plano Free anunciado permite 300 e-mails por dia; cadastros e remetentes depen
 
 SMS agora possui adapter Twilio no perfil sms-trial. Não há integração SMS permanentemente gratuita confirmada. Nenhuma conta foi criada ou mensagem real enviada nesta configuração.
 
-Limitações: sem outbox/retry persistente; um erro de envio ocorre após o commit do banco. O relatório PDF anterior descreve a versão simulada; este documento registra a nova integração. Não usar a API didática exposta à internet.
+Limitações: sem outbox/retry persistente; um erro de envio ocorre após o commit do banco. O relatório PDF atualizado distingue simulação, testes de contrato e integração real ainda não validada. Não usar a API didática exposta à internet.
 
 Referências: https://developers.brevo.com/reference/send-transac-email e https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans
 
@@ -40,6 +40,6 @@ java -jar target/a3-jogos-1.0.0.jar --server.port=8083 --spring.profiles.active=
 ```
 Definir também as três variáveis Brevo acima para ativar ambos os canais. Sem perfis, continua a simulação. Sem as credenciais obrigatórias, o perfil real não inicia. Antes de cada POST de SMS, consultamos a conta e exigimos type=Trial; conta Full ou erro de consulta bloqueia o envio. Não fazemos upgrades, compras ou retries automáticos. Essa checagem não substitui limites e condições aplicados pela Twilio.
 
-A aplicação só chama os adapters depois do commit. Como o envio é sequencial, falha em SMS impede a etapa de e-mail. HTTP de aceitação não prova entrega ao telefone; conferir o status no console. Identificar vencedores pelo nome é uma simplificação didática; nomes devem ser únicos no cadastro de contatos.
+A aplicação só chama os adapters depois do commit. Após persistir, a aplicação tenta ambos os canais e acumula as falhas; um erro de SMS não impede a tentativa de e-mail. HTTP de aceitação não prova entrega ao telefone; conferir o status no console. Identificar vencedores pelo nome é uma simplificação didática; nomes devem ser únicos no cadastro de contatos.
 
 Documentação consultada: https://www.twilio.com/docs/usage/trials e https://www.twilio.com/docs/iam/api/account . Não foi feita validação ponta a ponta com conta real: faltam cadastro, credenciais, remetente e destinatário verificado.

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConcluirCursoRequest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.dto</a> &gt; <span class="el_source">ConcluirCursoRequest.java</span></div><h1>ConcluirCursoRequest.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.dto;
+
+import jakarta.validation.constraints.*;
+
+<span class="fc" id="L5">public record ConcluirCursoRequest(</span>
+        @NotBlank(message = &quot;O código do curso é obrigatório.&quot;)
+        @Size(max = 80, message = &quot;O código do curso deve ter até 80 caracteres.&quot;) String codigoCurso,
+        @NotNull(message = &quot;A média é obrigatória.&quot;)
+        @DecimalMin(value = &quot;0.0&quot;, message = &quot;A média mínima é 0.&quot;)
+        @DecimalMax(value = &quot;10.0&quot;, message = &quot;A média máxima é 10.&quot;) Double media) { }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

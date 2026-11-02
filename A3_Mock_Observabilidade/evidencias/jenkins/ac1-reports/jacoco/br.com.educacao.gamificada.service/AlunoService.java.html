@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AlunoService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.service</a> &gt; <span class="el_source">AlunoService.java</span></div><h1>AlunoService.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.service;
+
+import br.com.educacao.gamificada.domain.Aluno;
+import br.com.educacao.gamificada.domain.Plano;
+import br.com.educacao.gamificada.recompensa.dto.RecompensaResponse;
+import br.com.educacao.gamificada.dto.*;
+import br.com.educacao.gamificada.entity.AlunoEntity;
+import br.com.educacao.gamificada.entity.ConclusaoCursoEntity;
+import br.com.educacao.gamificada.event.AlunoPromovidoEvent;
+import br.com.educacao.gamificada.repository.AlunoRepository;
+import br.com.educacao.gamificada.repository.ConclusaoCursoRepository;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+import java.util.Locale;
+
+@Service
+@Transactional(readOnly = true)
+public class AlunoService {
+    private final AlunoRepository alunos;
+    private final ConclusaoCursoRepository conclusoes;
+    private final ApplicationEventPublisher eventos;
+
+    public AlunoService(AlunoRepository alunos, ConclusaoCursoRepository conclusoes,
+<span class="fc" id="L30">                        ApplicationEventPublisher eventos) {</span>
+<span class="fc" id="L31">        this.alunos = alunos;</span>
+<span class="fc" id="L32">        this.conclusoes = conclusoes;</span>
+<span class="fc" id="L33">        this.eventos = eventos;</span>
+<span class="fc" id="L34">    }</span>
+
+    @Transactional
+    public AlunoResponse criar(CriarAlunoRequest pedido) {
+<span class="fc" id="L38">        var aluno = new Aluno(pedido.nome().strip(), Plano.BASICO, 0);</span>
+<span class="fc" id="L39">        return AlunoResponse.from(alunos.save(new AlunoEntity(aluno)));</span>
+    }
+
+    public List&lt;AlunoResponse&gt; listar() {
+<span class="fc" id="L43">        return alunos.findAll(Sort.by(&quot;id&quot;)).stream().map(AlunoResponse::from).toList();</span>
+    }
+
+    public AlunoResponse buscar(Long id) {
+<span class="fc" id="L47">        return AlunoResponse.from(alunos.findById(id).orElseThrow(this::alunoNaoEncontrado));</span>
+    }
+
+    @Transactional
+    public ConclusaoResponse concluirCurso(Long id, ConcluirCursoRequest pedido) {
+<span class="fc" id="L52">        var entidade = alunos.buscarParaAtualizar(id).orElseThrow(this::alunoNaoEncontrado);</span>
+<span class="fc" id="L53">        String codigoCurso = pedido.codigoCurso().strip().toUpperCase(Locale.ROOT);</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (conclusoes.existsByAluno_IdAndCodigoCurso(id, codigoCurso)) {</span>
+<span class="fc" id="L55">            throw new ResponseStatusException(HttpStatus.CONFLICT, &quot;Este curso já foi contabilizado para o aluno.&quot;);</span>
+        }
+
+<span class="fc" id="L58">        var aluno = entidade.toDomain();</span>
+<span class="fc" id="L59">        int quantidadeAnterior = aluno.getCursosConcluidos();</span>
+<span class="fc" id="L60">        boolean promovido = aluno.concluirCurso(pedido.media());</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        boolean contabilizado = aluno.getCursosConcluidos() &gt; quantidadeAnterior;</span>
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (contabilizado) {</span>
+<span class="fc" id="L64">            entidade.atualizarProgressao(aluno);</span>
+<span class="fc" id="L65">            conclusoes.save(new ConclusaoCursoEntity(entidade, codigoCurso, pedido.media()));</span>
+<span class="fc" id="L66">            alunos.saveAndFlush(entidade);</span>
+        }
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (promovido) {</span>
+<span class="fc" id="L69">            eventos.publishEvent(new AlunoPromovidoEvent(id));</span>
+        }
+<span class="fc" id="L71">        return new ConclusaoResponse(AlunoResponse.from(entidade), contabilizado, promovido);</span>
+    }
+
+    private ResponseStatusException alunoNaoEncontrado() {
+<span class="fc" id="L75">        return new ResponseStatusException(HttpStatus.NOT_FOUND, &quot;Aluno não encontrado.&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

@@ -1,0 +1,10 @@
+{
+  "tests": 23,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "LINE_COVERED": 68,
+  "LINE_MISSED": 0,
+  "BRANCH_COVERED": 12,
+  "BRANCH_MISSED": 0
+}

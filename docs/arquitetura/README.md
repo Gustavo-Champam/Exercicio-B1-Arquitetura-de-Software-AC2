@@ -1,27 +1,15 @@
 # B1 Arquitetura de Software
 
-Gustavo Gutierres Champam - RA 223645
-Gustavo Oliveira Camargo - RA 236024
+Gustavo Gutierres Champam — RA 223645  
+Gustavo Oliveira Camargo — RA 236024
 
-FACENS | Devops & QA CP802TIN2 | 26 de outubro de 2026
+Evoluímos o MVP real da AC1 em ac1/. Mantivemos promoção, recompensas e testes; organizamos o módulo de recompensas e adicionamos ranking com Ports & Adapters e integração FastAPI com fallback. A decisão macro continua sendo monólito modular. Eventos e MQTT são microsoluções separadas, conforme os mini-labs do enunciado; integração completa e recursos de produção ficam para a AF.
 
-## Decisão geral
-Escolhemos evoluir o Core para monólito modular, isolar a regra de ranking com uma porta de leitura e manter IA em processo Python independente. Para efeitos eventuais, adotamos outbox; para dispositivos, MQTT com gateway. A decomposição em mais serviços depende de evidência de necessidade.
+Fonte: https://github.com/Gustavo-Champam/educacao-continuada-gamificada. Commit e rastreabilidade em origem_ac1.json. A pasta core/ registra a primeira comparação com o projeto de referência e não é mais o Core implantado.
 
-Este é um registro cumulativo dos seis desafios. As metas de capacidade são propostas de aceitação; as evidências locais comprovam somente as hipóteses descritas. O Core de referência fornecido é a base da microsolução, e a integração com o MVP AC1 da equipe continua sendo necessária caso ele seja diferente.
+[Matriz de ASRs](matriz_asr.csv) | [C4](c4.md) | [Síntese AF](AF.md) | [Comparação da AC1](comparacao_ac1.json)
 
-## Navegação
-- [Matriz cumulativa](matriz_asr.csv)
-- [C4 final e visões](c4.md)
-- [ADRs](../adr/)
-- [Evidências](../../evidencias/)
-- [Execução](../../README.md)
-
-## Classificação
-FURPS+: F funcionalidade/segurança; U usabilidade; R confiabilidade; P desempenho; S suportabilidade. Restrições técnicas aparecem em RPC, não como uma tecnologia escolhida disfarçada de requisito. A matriz não atribui probabilidades fictícias ao cenário.
-
-
-## ADR-001 Drivers e evolução do Core
+# ADR-001 Drivers e evolução do Core
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
@@ -35,7 +23,7 @@ D1-A2 - Escalabilidade (P): Preservar fronteira para extrair ranking apenas se a
 D1-A3 - Complexidade operacional (S): Manter um deploy e um banco para equipe de seis pessoas. Verificação: Contagem dos processos essenciais do Core: um.
 
 ## RPCs
-Java/Spring Boot, banco relacional, legado da AC1 e equipe de seis desenvolvedores. Como o repositório específico da AC1 não foi fornecido, a microsolução parte do monólito modular de referência; sua integração ao MVP da equipe precisa ser validada antes da entrega definitiva.
+Java/Spring Boot, banco relacional, legado da AC1 e equipe de seis desenvolvedores. A evolução agora parte do repositório educacao-continuada-gamificada da equipe, commit registrado em origem_ac1.json. O código executável está em ac1; core preserva somente a comparação inicial com a referência.
 
 ## Alternativas e trade offs
 A - Camadas: operação simples, mas mudanças em uma capacidade atravessam pastas horizontais. B - Monólito modular: agrupa capacidade e explicita limites mantendo uma transação local; requer disciplina de dependências. C - Extração seletiva de ranking: escala e deploy próprios, mas adiciona contrato remoto, consistência eventual e operação. O volume total de usuários, isoladamente, não prova a necessidade de C.
@@ -44,45 +32,47 @@ A - Camadas: operação simples, mas mudanças em uma capacidade atravessam past
 Escolhemos o monólito modular e mantivemos o ranking no mesmo processo. O critério de revisão é saturação comprovada do ranking, apesar de paginação, índices e otimização, ou necessidade frequente de deploy independente. A equipe de seis pessoas favorece reduzir componentes operacionais enquanto não há essa evidência.
 
 ## Consequências
-Um único deploy continua sendo ponto comum de falha e escala. A consulta original de ranking ainda lê todos os registros e acopla-se à assinatura do usuário; a modularização não elimina esse custo nem oferece isolamento completo. Paginação e projeção de leitura são próximos experimentos. Relações JPA entre módulos permanecem como dívida explícita.
+Um único deploy continua sendo ponto comum de falha e escala. O adapter de ranking da AC1 ainda lê todos os alunos; a modularização não elimina esse custo nem comprova capacidade para 100 mil usuários. Paginação e projeção de leitura são próximos experimentos. O módulo de recompensas mantém relação com AlunoEntity e evento AlunoPromovidoEvent, dependências explícitas que ainda exigem disciplina.
 
 ## Evidência
-comparacao_dependencias.json; core/src/main/java/com/exemplo/usuario/ranking/. O projeto em camadas dispersa API, serviço e repository; o modular agrupa essas classes. A evolução adiciona porta e regra pura. Imports ausentes de Usuario/Curso em Matricula, já presentes no ZIP de referência, foram corrigidos para compilar.
+origem_ac1.json e comparacao_ac1.json registram a base real e as dependências. Movemos RecompensaService, RecompensaRepository, RecompensaEntity e RecompensaResponse para o módulo recompensa. O novo ranking usa dados reais de aluno, cursos e moedas, com porta, domínio puro e adapter JPA. Os testes originais de promoção e recompensas foram preservados.
 
 ## Impacto C4
 Container: navegador, Core e banco permanecem. Component: ranking passa a ter API, serviço, porta, regra de pontuação e adapter JPA.
 
-## ADR-002 Organização interna do Core
+
+# ADR-002 Organização interna do Core
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
 
 ## RF e RNF
-RF01 Ranking e RF02 regras de gamificação. RNFs: manutenibilidade, modificabilidade, testabilidade e evolução (S). Selecionamos modificabilidade e testabilidade como ASRs; não é preciso criar um terceiro apenas para preencher a matriz.
+RF01 Ranking e RF02 regras de gamificação da AC1, incluindo promoção após 12 cursos aprovados, um voucher e três moedas. RNFs: manutenibilidade, modificabilidade, testabilidade e evolução (S). Selecionamos modificabilidade e testabilidade como ASRs; não é preciso criar um terceiro apenas para preencher a matriz.
 
 ## ASRs prioritários
 D2-A1 - Modificabilidade (S): Inverter a dependência da aplicação para uma porta de leitura. Verificação: RankingService depende de RankingPort, não do repository.
 D2-A2 - Testabilidade (S): Executar regra e caso de uso sem inicializar Spring nem banco. Verificação: Pontuacao e fake testados com JUnit; mesmo resultado com JPA/H2.
 
 ## RPCs
-Spring Boot permanece; regras existentes devem ser reaproveitadas; não reescrever o produto inteiro. Preservada a fórmula cursos concluídos × 100 + moedas e o endpoint de ranking.
+Spring Boot permanece; regras existentes devem ser reaproveitadas; não reescrever o produto inteiro. Preservamos as regras originais de promoção e recompensas. Adicionamos ranking com fórmula cursos concluídos × 100 + moedas e desempate por ID.
 
 ## Alternativas e trade offs
-A - Serviço diretamente ligado a RankingRepository e entidade Assinatura: menos tipos, mas testes e mudanças de banco afetam a aplicação. B - Porta de leitura RankingPort e adapter JPA: a aplicação recebe dados simples, e o domínio calcula os pontos; adiciona mapeamento e uma interface. DDD ajuda a nomear capacidades e regras; Hexagonal define portas/adapters; Clean e Onion descrevem direção de dependências. Não são produtos obrigatórios nem padrões mutuamente exclusivos.
+A - Serviço diretamente ligado a AlunoRepository e entidade AlunoEntity: menos tipos, mas testes e mudanças de banco afetam a aplicação. B - Porta de leitura RankingPort e adapter JPA: a aplicação recebe dados simples, e o domínio calcula os pontos; adiciona mapeamento e uma interface. DDD ajuda a nomear capacidades e regras; Hexagonal define portas/adapters; Clean e Onion descrevem direção de dependências. Não são produtos obrigatórios nem padrões mutuamente exclusivos.
 
 ## Decisão
-Aplicamos Ports & Adapters somente ao ranking. RankingPort pertence à aplicação; RankingJpaAdapter implementa a porta; Pontuacao é Java puro. A aplicação ainda usa @Service/@Transactional e DTO de saída: é uma adoção incremental, não uma alegação de Clean Architecture integral.
+Aplicamos Ports & Adapters somente ao ranking. RankingPort pertence à aplicação; RankingJpaAdapter implementa a porta; Pontuacao é Java puro. A aplicação usa @Service e a transação de leitura pertence ao adapter JPA: é uma adoção incremental de Ports & Adapters.
 
 ## Consequências
-Trocar persistência exige implementar a porta, sem mudar a regra. Existem mais tipos e mapeamentos. O repository ainda ordena pela expressão SQL equivalente à fórmula de domínio; alterar a fórmula exige atualizar a ordenação e seu teste de contrato. Um único cálculo no banco/projeção será avaliado se o volume tornar o mapeamento caro.
+Trocar persistência exige implementar a porta, sem mudar a regra. Existem mais tipos e mapeamentos. A ordenação é feita em memória pelo resultado calculado no domínio. Paginação e projeção de leitura serão avaliadas após medir carga.
 
 ## Evidência
-RankingTest valida 320 pontos com adapter em memória; RankingJpaTest grava e recarrega assinatura com H2 e obtém os mesmos 320 pontos. Pontuacao testa negativos e overflow. A regra não importa Spring ou JPA.
+RankingTest valida pontuação e ordenação com porta fake. RankingIntegrationTest usa AlunoService real: conclui 12 cursos da AC1, promove o aluno e verifica 1203 pontos no adapter JPA. Pontuacao testa negativos e overflow. A regra não importa Spring ou JPA.
 
 ## Impacto C4
 Component do Core mostra controller → serviço → porta; adapter JPA implementa porta e acessa repository; serviço chama Pontuacao.
 
-## ADR-003 Serviço Python e IA
+
+# ADR-003 Serviço Python e IA
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
@@ -108,12 +98,13 @@ Escolhemos um serviço Python independente, com endpoints e responsabilidades se
 Recomendação indisponível devolve catálogo básico; assistente deve informar indisponibilidade, nunca inventar resposta. Cliente Java tem timeout de conexão de 300 ms e de requisição de 800 ms, sem retries no caminho interativo. Instrumentamos um contador para cada fallback. Circuit breaker e limite de concorrência ficam para a AF, após observar falhas sustentadas.
 
 ## Evidência
-ia-online.log e ia-offline.log registram o mesmo endpoint Spring respondendo 200: primeiro origem python, depois origem catalogo com o processo FastAPI interrompido. O teste automatizado IaTest comprova fallback e contador em porta indisponível.
+ia-online.log e ia-offline.log registram o mesmo endpoint Spring respondendo 200: primeiro origem python, depois origem catalogo com o processo FastAPI interrompido. RecomendacaoTest exercita HTTP real em loopback: sucesso, erro 503 e serviço interrompido, verificando fallback e contador na AC1.
 
 ## Impacto C4
 Container adiciona serviço Python e HTTP/JSON Core → IA. Vetores/documentos do RAG são capacidade futura, não artefatos do mini-lab.
 
-## ADR-004 Comunicação e eventos
+
+# ADR-004 Comunicação e eventos
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
@@ -144,7 +135,8 @@ microsolucoes/eventos.py: falha síncrona é propagada; conclusão+outbox perman
 ## Impacto C4
 Container alvo inclui worker de outbox e consumidor de notificação. A sequência distingue commit local de entrega posterior. Estes componentes estão no lab de eventos, ainda separados da aplicação Spring.
 
-## ADR-005 IoT e MQTT
+
+# ADR-005 IoT e MQTT
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
@@ -175,7 +167,8 @@ microsolucoes/mqtt_lab.py e mqtt.log: publicador envia duas cópias com QoS 1 ao
 ## Impacto C4
 Container alvo: dispositivo → broker MQTT → gateway → Core. MQTT/TCP no lab; MQTT/TLS e HTTPS na implantação proposta.
 
-## ADR-006 CI CD e observabilidade
+
+# ADR-006 CI CD e observabilidade
 
 Status: aceito para a PoC didática; implantação de produção não aprovada.
 Data: 26/10/2026
@@ -185,8 +178,8 @@ Todos os RFs dependem de construção e operação confiáveis. RNFs: observabil
 
 ## ASRs prioritários
 D6-A1 - Observabilidade (S): Instrumentar falhas recuperadas, além do status HTTP. Verificação: ia_fallback_total aumenta mesmo quando a API responde 200.
-D6-A2 - Confiabilidade de entrega (R): Bloquear implantação quando testes ou build falharem. Verificação: Jenkinsfile sequencial sem ignorar falhas; Maven executado localmente.
-D6-A3 - Recuperabilidade operacional (S): Versionar imagens/configuração e preparar retorno à versão anterior. Verificação: JAR e configurações versionáveis; rollback em ambiente Jenkins ainda pendente.
+D6-A2 - Confiabilidade de entrega (R): Bloquear implantação quando testes ou build falharem. Verificação: Jenkinsfile sequencial sem ignorar falhas; Jenkins executou os testes, builds e deploy do laboratório; 64 testes aprovados, nenhum ignorado.
+D6-A3 - Recuperabilidade operacional (R): Versionar imagens/configuração e preparar retorno à versão anterior. Verificação: JAR e configurações versionáveis; rollback em ambiente Jenkins ainda pendente.
 
 ## RPCs
 Jenkins é a base da esteira e Prometheus/Grafana são ferramentas do laboratório. Artefatos e configuração versionados. Esta entrega inclui a evolução pedida no B1; a atividade A2 de Jenkins não foi refeita nem sobrescrita.
@@ -195,13 +188,13 @@ Jenkins é a base da esteira e Prometheus/Grafana são ferramentas do laboratór
 A - Pipeline único: integração simples e coordenação central, mas mudanças na IA podem aguardar etapas do Core. B - Pipelines por componente: deploy independente e menor escopo de falha, com custo de contratos e promoção conjunta. Com um único repositório e equipe pequena, o pipeline inicial único tem etapas separadas; extrair pipelines quando a frequência independente for comprovada.
 
 ## Decisão
-Preparamos um Jenkinsfile com teste/build antes de Docker e smoke test após implantação. Falhas Maven bloqueiam deploy; falha de saúde falha a execução. Prometheus coleta Actuator e Grafana consulta Prometheus. O contador ia_fallback_total evidencia degradação invisível ao HTTP 200.
+Executamos um Jenkinsfile com teste/build antes de Docker e smoke test após implantação. Falhas Maven bloqueiam deploy; falha de saúde falha a execução. Prometheus coleta Actuator e Grafana consulta Prometheus. O contador ia_fallback_total evidencia degradação invisível ao HTTP 200.
 
 ## Consequências
-Jenkinsfile fornecido pressupõe agente Linux com JDK jdk17, Python e Docker. Foi revisado, mas não executado num servidor Jenkins. Compose foi preparado, enquanto as evidências locais foram produzidas por processos nativos. Não há rollback automático implementado; a AF deve usar tags imutáveis e validar retorno à versão anterior.
+Jenkinsfile usa agente Linux com JDK 17 para o projeto, Python e Docker. O workflow inicia Jenkins com Java 21 e executa o Jenkinsfile obtido do Git. A validação inclui PostgreSQL real, build, cobertura, containers, APIs e métricas. O resultado efetivo e a proveniência devem ser consultados no artefato da execução. Não há rollback automático implementado; a AF deve usar tags imutáveis e validar retorno à versão anterior.
 
 ## Evidência
-core-build.log, prometheus.png, grafana.png, grafana-fallback.png e metricas.json. Core e A3 apareceram UP; interrupção de Python gerou fallback observável. up comprova scrape e não disponibilidade funcional completa. Histogramas de HTTP permitem p95; número de usuários cadastrados não comprova throughput.
+Execução https://github.com/Gustavo-Champam/Exercicio-B1-Arquitetura-de-Software-AC2/actions/runs/41537017845, resultado Jenkins SUCCESS. evidencias/jenkins/provenance.json vincula o resultado ao commit; junit.json registra 64 testes aprovados e nenhum ignorado. Os relatórios JaCoCo dos dois projetos registram 100% de linhas e ramos. validacao.json registra ranking real de 1203 pontos, IA online e fallback após parar o container, além dos contadores Prometheus. As capturas b1-grafana.png e a3-grafana.png mostram os painéis atuais. up comprova coleta, não disponibilidade funcional completa. Histogramas permitem medir latência; não alegamos teste de 100 mil usuários.
 
 ## Impacto C4
-Deployment distingue processos nativos usados na validação de containers planejados para o lab Jenkins. Visão final mantém Core único, IA separada e integrações de eventos/IoT explicitamente identificadas como microsoluções.
+Deployment representa Jenkins no runner temporário, containers da AC1, FastAPI, Prometheus/Grafana, PostgreSQL de teste e aplicação A3. Eventos e MQTT continuam microsoluções que comprovam as hipóteses dos desafios 4 e 5.

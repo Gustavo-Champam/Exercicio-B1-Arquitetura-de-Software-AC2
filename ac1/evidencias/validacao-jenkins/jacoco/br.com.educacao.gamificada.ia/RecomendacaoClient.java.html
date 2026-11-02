@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecomendacaoClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.ia</a> &gt; <span class="el_source">RecomendacaoClient.java</span></div><h1>RecomendacaoClient.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.ia;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.*;
+import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.http.client.JdkClientHttpRequestFactory;
+import java.net.http.HttpClient;
+import java.time.Duration;
+@Service public class RecomendacaoClient {
+ private final RestClient client; private final MeterRegistry metrics;
+<span class="fc" id="L11"> public RecomendacaoClient(RestClient.Builder builder,@Value(&quot;${ia.url:http://localhost:8001}&quot;) String url,MeterRegistry metrics){</span>
+<span class="fc" id="L12">  var factory=new JdkClientHttpRequestFactory(HttpClient.newBuilder().connectTimeout(Duration.ofMillis(300)).build());</span>
+<span class="fc" id="L13">  factory.setReadTimeout(Duration.ofMillis(800));</span>
+<span class="fc" id="L14">  this.client=builder.requestFactory(factory).baseUrl(url).build();this.metrics=metrics;</span>
+<span class="fc" id="L15"> }</span>
+ public String recomendar(){
+<span class="fc" id="L17">  try {return client.get().uri(&quot;/recomendacoes&quot;).retrieve().body(String.class);}</span>
+<span class="fc" id="L18">  catch(RestClientException e){metrics.counter(&quot;ia.fallback&quot;).increment();return &quot;{\&quot;origem\&quot;:\&quot;catalogo\&quot;,\&quot;cursos\&quot;:[\&quot;Introducao a Java\&quot;]}&quot;;}</span>
+ }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

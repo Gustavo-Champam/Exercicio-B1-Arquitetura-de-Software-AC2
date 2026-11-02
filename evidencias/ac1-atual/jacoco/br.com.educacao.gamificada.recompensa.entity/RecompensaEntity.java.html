@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecompensaEntity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.recompensa.entity</a> &gt; <span class="el_source">RecompensaEntity.java</span></div><h1>RecompensaEntity.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.recompensa.entity;
+import br.com.educacao.gamificada.entity.ConclusaoCursoEntity;
+import br.com.educacao.gamificada.entity.AlunoEntity;
+
+import jakarta.persistence.*;
+import java.time.Instant;
+
+@Entity
+@Table(name = &quot;recompensas_premium&quot;)
+public class RecompensaEntity {
+    @Id
+    private Long alunoId;
+    @Column(nullable = false)
+    private int vouchers;
+    @Column(nullable = false)
+    private int moedas;
+    @Column(nullable = false)
+    private String origem;
+    @Column(nullable = false)
+    private Instant registradoEm;
+
+<span class="fc" id="L22">    protected RecompensaEntity() { }</span>
+<span class="fc" id="L23">    public RecompensaEntity(AlunoEntity aluno) {</span>
+<span class="fc" id="L24">        alunoId = aluno.getId();</span>
+<span class="fc" id="L25">        vouchers = aluno.getVouchers();</span>
+<span class="fc" id="L26">        moedas = aluno.getMoedas();</span>
+<span class="fc" id="L27">        origem = &quot;PROMOCAO_PREMIUM&quot;;</span>
+<span class="fc" id="L28">        registradoEm = Instant.now();</span>
+<span class="fc" id="L29">    }</span>
+<span class="fc" id="L30">    public Long getAlunoId() { return alunoId; }</span>
+<span class="fc" id="L31">    public int getVouchers() { return vouchers; }</span>
+<span class="fc" id="L32">    public int getMoedas() { return moedas; }</span>
+<span class="fc" id="L33">    public String getOrigem() { return origem; }</span>
+<span class="fc" id="L34">    public Instant getRegistradoEm() { return registradoEm; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

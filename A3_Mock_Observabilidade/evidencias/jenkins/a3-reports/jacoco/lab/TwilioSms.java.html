@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TwilioSms.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">a3-jogos</a> &gt; <a href="index.source.html" class="el_package">lab</a> &gt; <span class="el_source">TwilioSms.java</span></div><h1>TwilioSms.java</h1><pre class="source lang-java linenums">package lab;
+import java.util.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Profile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.RestClient;
+import org.springframework.http.MediaType;
+import org.springframework.util.LinkedMultiValueMap;
+@Component @Profile(&quot;sms-trial&quot;)
+public class TwilioSms implements Sms {
+ private final RestClient client;
+ private final String sid,from,modelo;
+ private final Map&lt;String,String&gt; contatos;
+ public TwilioSms(RestClient.Builder builder,@Value(&quot;${TWILIO_ACCOUNT_SID}&quot;) String sid,
+  @Value(&quot;${TWILIO_AUTH_TOKEN}&quot;) String token,@Value(&quot;${TWILIO_FROM}&quot;) String from,
+<span class="fc" id="L18">  @Value(&quot;${TWILIO_DESTINATARIOS}&quot;) String destinos,@Value(&quot;${TWILIO_TRIAL_MESSAGE}&quot;) String modelo) throws Exception {</span>
+<span class="fc" id="L19">  this.sid=sid;this.from=from;this.modelo=modelo;</span>
+<span class="fc" id="L20">  this.contatos=new ObjectMapper().readValue(destinos,new TypeReference&lt;Map&lt;String,String&gt;&gt;(){});</span>
+<span class="fc" id="L21">  this.client=builder.baseUrl(&quot;https://api.twilio.com/2010-04-01&quot;)</span>
+<span class="fc" id="L22">   .defaultHeaders(h-&gt;h.setBasicAuth(sid,token)).build();</span>
+<span class="fc" id="L23"> }</span>
+ public void enviar(Finalizado jogo) {
+<span class="fc" id="L25">  String to=Objects.requireNonNull(contatos.get(jogo.getVencedor()),&quot;Vencedor sem telefone cadastrado&quot;);</span>
+<span class="fc" id="L26">  Map&lt;?,?&gt; conta=Objects.requireNonNull(client.get().uri(&quot;/Accounts/{sid}.json&quot;,sid).retrieve().body(Map.class));</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">  if(!&quot;Trial&quot;.equals(conta.get(&quot;type&quot;))) throw new IllegalStateException(&quot;Envio bloqueado: conta nao e Trial&quot;);</span>
+<span class="fc" id="L28">  var dados=new LinkedMultiValueMap&lt;String,String&gt;();</span>
+<span class="fc" id="L29">  dados.add(&quot;From&quot;,from);dados.add(&quot;To&quot;,to);dados.add(&quot;Body&quot;,modelo);</span>
+<span class="fc" id="L30">  client.post().uri(&quot;/Accounts/{sid}/Messages.json&quot;,sid).contentType(MediaType.APPLICATION_FORM_URLENCODED)</span>
+<span class="fc" id="L31">   .body(dados).retrieve().toBodilessEntity();</span>
+<span class="fc" id="L32"> }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

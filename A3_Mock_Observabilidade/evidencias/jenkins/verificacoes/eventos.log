@@ -1,0 +1,6 @@
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.531s
+
+OK
+D4: REST falha; conclusao+outbox persistem; reinicio recupera; duplicata nao duplica efeito.

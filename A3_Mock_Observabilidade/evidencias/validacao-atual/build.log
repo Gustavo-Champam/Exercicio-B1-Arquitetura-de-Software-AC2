@@ -1,0 +1,178 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< facens:a3-jogos >---------------------------
+[INFO] Building a3-jogos 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ a3-jogos ---
+[INFO] Deleting C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ a3-jogos ---
+[INFO] argLine set to -javaagent:C:\\Users\\gutig\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\gutig\\Documents\\Codex\\2026-10-26\\fa-a-essas-atividades-menos-a\\outputs\\A3_Mock_Observabilidade\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ a3-jogos ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ a3-jogos ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 14 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ a3-jogos ---
+[INFO] skip non existing resourceDirectory C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ a3-jogos ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 6 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ a3-jogos ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running lab.BrevoEmailTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.909 s -- in lab.BrevoEmailTest
+[INFO] Running lab.ControllerTest
+19:13:42.976 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [lab.ControllerTest]: ControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:13:43.195 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration lab.Application for test class lab.ControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2026-11-02T19:13:43.873-03:00  INFO 20488 --- [           main] lab.ControllerTest                       : Starting ControllerTest using Java 17.0.20.1 with PID 20488 (started by gutig in C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade)
+2026-11-02T19:13:43.874-03:00  INFO 20488 --- [           main] lab.ControllerTest                       : No active profile set, falling back to 1 default profile: "default"
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-11-02T19:13:46.973-03:00  INFO 20488 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-02T19:13:46.973-03:00  INFO 20488 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-02T19:13:46.978-03:00  INFO 20488 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-11-02T19:13:47.006-03:00  INFO 20488 --- [           main] lab.ControllerTest                       : Started ControllerTest in 3.714 seconds (process running for 6.276)
+2026-11-02T19:13:47.241-03:00  WARN 20488 --- [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDate'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam java.time.LocalDate] for value [abc]]
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.525 s -- in lab.ControllerTest
+[INFO] Running lab.FinalizaJogoTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 s -- in lab.FinalizaJogoTest
+[INFO] Running lab.IntegrationTest
+2026-11-02T19:13:47.575-03:00  INFO 20488 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [lab.IntegrationTest]: IntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-02T19:13:47.579-03:00  INFO 20488 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration lab.Application for test class lab.IntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2026-11-02T19:13:47.622-03:00  INFO 20488 --- [           main] lab.IntegrationTest                      : Starting IntegrationTest using Java 17.0.20.1 with PID 20488 (started by gutig in C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade)
+2026-11-02T19:13:47.622-03:00  INFO 20488 --- [           main] lab.IntegrationTest                      : No active profile set, falling back to 1 default profile: "default"
+2026-11-02T19:13:48.479-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-02T19:13:48.548-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 1 JPA repository interface.
+2026-11-02T19:13:49.437-03:00  INFO 20488 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-02T19:13:49.563-03:00  INFO 20488 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-11-02T19:13:49.628-03:00  INFO 20488 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-02T19:13:49.910-03:00  INFO 20488 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-02T19:13:49.974-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-02T19:13:50.396-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:jogos user=SA
+2026-11-02T19:13:50.399-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-02T19:13:51.839-03:00  INFO 20488 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-02T19:13:51.972-03:00  INFO 20488 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-02T19:13:52.777-03:00  WARN 20488 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-02T19:13:53.443-03:00  INFO 20488 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-11-02T19:13:53.535-03:00  INFO 20488 --- [           main] lab.IntegrationTest                      : Started IntegrationTest in 5.947 seconds (process running for 12.796)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2026-11-02T19:13:53.632-03:00  INFO 20488 --- [           main] lab.Application                          : Starting Application using Java 17.0.20.1 with PID 20488 (started by gutig in C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade)
+2026-11-02T19:13:53.632-03:00  INFO 20488 --- [           main] lab.Application                          : No active profile set, falling back to 1 default profile: "default"
+2026-11-02T19:13:53.839-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-02T19:13:53.847-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 1 JPA repository interface.
+2026-11-02T19:13:53.938-03:00  INFO 20488 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-02T19:13:53.939-03:00  INFO 20488 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-02T19:13:53.960-03:00  INFO 20488 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-02T19:13:53.962-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-11-02T19:13:53.963-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:jogos user=SA
+2026-11-02T19:13:53.964-03:00  INFO 20488 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-11-02T19:13:54.008-03:00  INFO 20488 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-02T19:13:54.012-03:00  INFO 20488 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-02T19:13:54.420-03:00  INFO 20488 --- [           main] lab.Application                          : Started Application in 0.83 seconds (process running for 13.682)
+2026-11-02T19:13:54.630-03:00  INFO 20488 --- [           main] lab.SmsLog                               : SMS simulado jogo=8 vencedor=Bia
+2026-11-02T19:13:54.630-03:00  INFO 20488 --- [           main] lab.EmailLog                             : Email simulado jogo=8 vencedor=Bia
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.651 s -- in lab.IntegrationTest
+[INFO] Running lab.RepositoryTest
+2026-11-02T19:13:55.233-03:00  INFO 20488 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [lab.RepositoryTest]: RepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-02T19:13:55.243-03:00  INFO 20488 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration lab.Application for test class lab.RepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.3)
+
+2026-11-02T19:13:55.269-03:00  INFO 20488 --- [           main] lab.RepositoryTest                       : Starting RepositoryTest using Java 17.0.20.1 with PID 20488 (started by gutig in C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade)
+2026-11-02T19:13:55.270-03:00  INFO 20488 --- [           main] lab.RepositoryTest                       : No active profile set, falling back to 1 default profile: "default"
+2026-11-02T19:13:55.349-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-02T19:13:55.355-03:00  INFO 20488 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2026-11-02T19:13:55.368-03:00  INFO 20488 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-11-02T19:13:55.388-03:00  INFO 20488 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:eec4ec62-a24f-49f6-bf47-2373c24a033f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-11-02T19:13:55.405-03:00  INFO 20488 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-02T19:13:55.406-03:00  INFO 20488 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-02T19:13:55.406-03:00  INFO 20488 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-02T19:13:55.450-03:00  INFO 20488 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table finalizado (id bigint not null, vencedor varchar(255) not null, primary key (id))
+2026-11-02T19:13:55.450-03:00  INFO 20488 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-02T19:13:55.479-03:00  INFO 20488 --- [           main] lab.RepositoryTest                       : Started RepositoryTest in 0.236 seconds (process running for 14.741)
+Hibernate: select f1_0.id,f1_0.vencedor from finalizado f1_0 where f1_0.id=?
+Hibernate: insert into finalizado (vencedor,id) values (?,?)
+Hibernate: select f1_0.id,f1_0.vencedor from finalizado f1_0 where f1_0.id=?
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.269 s -- in lab.RepositoryTest
+[INFO] Running lab.TwilioSmsTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in lab.TwilioSmsTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ a3-jogos ---
+[INFO] Building jar: C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\a3-jogos-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.3.3:repackage (repackage) @ a3-jogos ---
+[INFO] Replacing main artifact C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\a3-jogos-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\a3-jogos-1.0.0.jar.original
+[INFO] 
+[INFO] --- jacoco:0.8.12:report (report) @ a3-jogos ---
+[INFO] Loading execution data file C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\jacoco.exec
+[INFO] Analyzed bundle 'a3-jogos' with 13 classes
+[INFO] 
+[INFO] --- jacoco:0.8.12:check (report) @ a3-jogos ---
+[INFO] Loading execution data file C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\jacoco.exec
+[INFO] Analyzed bundle 'a3-jogos' with 13 classes
+[INFO] All coverage checks have been met.
+[INFO] 
+[INFO] --- install:3.1.3:install (default-install) @ a3-jogos ---
+[INFO] Installing C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\pom.xml to C:\Users\gutig\.m2\repository\facens\a3-jogos\1.0.0\a3-jogos-1.0.0.pom
+[INFO] Installing C:\Users\gutig\Documents\Codex\2026-10-26\fa-a-essas-atividades-menos-a\outputs\A3_Mock_Observabilidade\target\a3-jogos-1.0.0.jar to C:\Users\gutig\.m2\repository\facens\a3-jogos\1.0.0\a3-jogos-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20.476 s
+[INFO] Finished at: 2026-11-02T19:13:57-03:00
+[INFO] ------------------------------------------------------------------------

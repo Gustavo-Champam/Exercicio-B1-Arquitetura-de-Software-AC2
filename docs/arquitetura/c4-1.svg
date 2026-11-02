@@ -17,7 +17,7 @@
 			<rect x="170" y="320" width="160" height="80" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
 			<text x="204.43359375" y="383" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,766) scale(1,-1)">Core da plataforma</text>
 			<text x="215.2716064453125" y="368" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,736) scale(1,-1)">Java / Spring Boot</text>
-			<text x="200.398681640625" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">Cursos, matrícula, ranking</text>
+			<text x="196.609375" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">AC1: alunos e recompensas</text>
 			<text x="220.943115234375" y="344" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,688) scale(1,-1)">Processo único</text>
 			<rect x="5" y="170" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
 			<text x="37.4853515625" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Banco relacional</text>

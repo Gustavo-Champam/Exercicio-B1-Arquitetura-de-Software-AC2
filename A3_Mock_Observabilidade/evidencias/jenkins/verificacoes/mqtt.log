@@ -1,0 +1,5 @@
+/home/runner/work/Exercicio-B1-Arquitetura-de-Software-AC2/Exercicio-B1-Arquitetura-de-Software-AC2/.ci-runtime/home/workspace/B1_A3_Equipe/microsolucoes/mqtt_lab.py:6: DeprecationWarning: Loading plugins from EntryPoints is deprecated and will be removed in a future version. Use `plugins` section of config instead.
+  broker=Broker({'listeners':{'default':{'type':'tcp','bind':'127.0.0.1:18883'}},'sys_interval':0,'auth':{'allow-anonymous':True}})
+Configuration parameter 'password-file' not found
+'sys_interval' key is not set or is None
+{"mensagens_mqtt": 2, "efeitos": 1, "evento_transformado": {"tipo": "PresencaRegistrada", "instituicao": "facens", "aluno": "223645", "event_id": "evt-1"}}

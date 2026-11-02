@@ -11,7 +11,7 @@
 	<g id="group" transform="scale(1,-1) translate(0,-490)" style="clip-path: url(#clip)">
 		<g transform="">
 			<rect x="150" y="405" width="200" height="65" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
-			<text x="195.54931640625" y="453" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,906) scale(1,-1)">RankingRestController</text>
+			<text x="206.38671875" y="453" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,906) scale(1,-1)">RankingController</text>
 			<text x="218.1104736328125" y="438" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,876) scale(1,-1)">Controller Spring</text>
 			<text x="202.2891845703125" y="426" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,852) scale(1,-1)">Mantém o contrato HTTP</text>
 			<rect x="150" y="285" width="200" height="65" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
@@ -35,7 +35,7 @@
 			<text x="207.8480224609375" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">Adapter de persistência</text>
 			<text x="209.9730224609375" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Mapeia entidades JPA</text>
 			<rect x="355" y="25" width="140" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
-			<text x="379.16015625" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">RankingRepository</text>
+			<text x="384.7216796875" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">AlunoRepository</text>
 			<text x="393.58154296875" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">Spring Data JPA</text>
 			<text x="395.4658203125" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Consulta banco</text>
 			<path d="M 250,405 L 250,350 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Aluno.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.domain</a> &gt; <span class="el_source">Aluno.java</span></div><h1>Aluno.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.domain;
+
+public class Aluno {
+
+    private static final int VOUCHERS_PREMIUM = 1;
+    private static final int MOEDAS_PREMIUM = 3;
+    private static final double MEDIA_MINIMA = 7.0;
+    private static final int CURSOS_PARA_PREMIUM = 12;
+
+    private final String nome;
+    private Plano plano;
+    private int cursosConcluidos;
+    private int vouchers;
+    private int moedas;
+
+<span class="fc" id="L16">    public Aluno(String nome, Plano plano, int cursosConcluidos) {</span>
+<span class="fc bfc" id="L17" title="All 4 branches covered.">        if (nome == null || nome.isBlank()) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;O nome é obrigatório.&quot;);</span>
+        }
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (plano == null) {</span>
+<span class="fc" id="L21">            throw new IllegalArgumentException(&quot;O plano é obrigatório.&quot;);</span>
+        }
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (cursosConcluidos &lt; 0) {</span>
+<span class="fc" id="L24">            throw new IllegalArgumentException(&quot;A quantidade de cursos não pode ser negativa.&quot;);</span>
+        }
+<span class="fc" id="L26">        this.nome = nome;</span>
+<span class="fc" id="L27">        this.plano = plano;</span>
+<span class="fc" id="L28">        this.cursosConcluidos = cursosConcluidos;</span>
+<span class="fc" id="L29">        concederRecompensasPremium();</span>
+<span class="fc" id="L30">    }</span>
+
+    public boolean concluirCurso(double media) {
+<span class="fc" id="L33">        validarMedia(media);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (media &lt; MEDIA_MINIMA) {</span>
+<span class="fc" id="L35">            return false;</span>
+        }
+
+<span class="fc" id="L38">        cursosConcluidos++;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (podeSerPromovido()) {</span>
+<span class="fc" id="L40">            plano = Plano.PREMIUM;</span>
+<span class="fc" id="L41">            concederRecompensasPremium();</span>
+<span class="fc" id="L42">            return true;</span>
+        }
+<span class="fc" id="L44">        return false;</span>
+    }
+
+    private static void validarMedia(double media) {
+<span class="fc bfc" id="L48" title="All 6 branches covered.">        if (!Double.isFinite(media) || media &lt; 0 || media &gt; 10) {</span>
+<span class="fc" id="L49">            throw new IllegalArgumentException(&quot;A média deve estar entre 0 e 10.&quot;);</span>
+        }
+<span class="fc" id="L51">    }</span>
+
+    private boolean podeSerPromovido() {
+<span class="fc bfc" id="L54" title="All 4 branches covered.">        return plano == Plano.BASICO &amp;&amp; cursosConcluidos &gt;= CURSOS_PARA_PREMIUM;</span>
+    }
+
+<span class="fc" id="L57">    public int getVouchers() { return vouchers; }</span>
+<span class="fc" id="L58">    public int getMoedas() { return moedas; }</span>
+    public void concederRecompensasPremium() {
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (plano == Plano.PREMIUM) {</span>
+<span class="fc" id="L61">            vouchers = VOUCHERS_PREMIUM;</span>
+<span class="fc" id="L62">            moedas = MOEDAS_PREMIUM;</span>
+        }
+<span class="fc" id="L64">    }</span>
+
+<span class="fc" id="L66">    public String getNome() { return nome; }</span>
+<span class="fc" id="L67">    public Plano getPlano() { return plano; }</span>
+<span class="fc" id="L68">    public int getCursosConcluidos() { return cursosConcluidos; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

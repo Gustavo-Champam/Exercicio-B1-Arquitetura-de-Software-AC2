@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecompensaService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">educacao-gamificada</a> &gt; <a href="index.source.html" class="el_package">br.com.educacao.gamificada.recompensa.service</a> &gt; <span class="el_source">RecompensaService.java</span></div><h1>RecompensaService.java</h1><pre class="source lang-java linenums">package br.com.educacao.gamificada.recompensa.service;
+import br.com.educacao.gamificada.service.AlunoService;
+
+import br.com.educacao.gamificada.domain.Plano;
+import br.com.educacao.gamificada.recompensa.dto.RecompensaResponse;
+import br.com.educacao.gamificada.recompensa.entity.RecompensaEntity;
+import br.com.educacao.gamificada.event.AlunoPromovidoEvent;
+import br.com.educacao.gamificada.recompensa.repository.RecompensaRepository;
+import br.com.educacao.gamificada.repository.*;
+import org.springframework.context.event.EventListener;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
+import java.util.List;
+
+@Service
+public class RecompensaService {
+    private final AlunoRepository alunos;
+    private final RecompensaRepository recompensas;
+<span class="fc" id="L21">    public RecompensaService(AlunoRepository alunos, RecompensaRepository recompensas) {</span>
+<span class="fc" id="L22">        this.alunos = alunos;</span>
+<span class="fc" id="L23">        this.recompensas = recompensas;</span>
+<span class="fc" id="L24">    }</span>
+
+    @EventListener
+    @Transactional
+    public void registrar(AlunoPromovidoEvent evento) {
+<span class="fc" id="L29">        var aluno = alunos.buscarParaAtualizar(evento.alunoId()).orElseThrow(</span>
+<span class="fc" id="L30">                () -&gt; new ResponseStatusException(HttpStatus.NOT_FOUND, &quot;Aluno não encontrado.&quot;));</span>
+        // O bloqueio e a chave primária por aluno protegem reprocessamentos concorrentes.
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        if (aluno.getPlano() == Plano.PREMIUM &amp;&amp; !recompensas.existsById(aluno.getId())) {</span>
+<span class="fc" id="L33">            recompensas.saveAndFlush(new RecompensaEntity(aluno));</span>
+        }
+<span class="fc" id="L35">    }</span>
+
+    @Transactional(readOnly = true)
+    public List&lt;RecompensaResponse&gt; historico(Long id) {
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (!alunos.existsById(id)) {</span>
+<span class="fc" id="L40">            throw new ResponseStatusException(HttpStatus.NOT_FOUND, &quot;Aluno não encontrado.&quot;);</span>
+        }
+<span class="fc" id="L42">        return recompensas.findById(id).stream().map(RecompensaResponse::from).toList();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

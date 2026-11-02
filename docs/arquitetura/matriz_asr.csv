@@ -3,7 +3,7 @@ D1-A1;S;Manutenibilidade;Localizar mudanças no módulo de ranking, restringindo
 D1-A2;P;Escalabilidade;Preservar fronteira para extrair ranking apenas se a carga justificar outro deploy.;"Meta proposta: p95 de leitura < 300 ms sob carga definida na AF; não validada para 100 mil usuários."
 D1-A3;S;Complexidade operacional;Manter um deploy e um banco para equipe de seis pessoas.;Contagem dos processos essenciais do Core: um.
 D2-A1;S;Modificabilidade;Inverter a dependência da aplicação para uma porta de leitura.;RankingService depende de RankingPort, não do repository.
-D2-A2;S;Testabilidade;Executar regra e caso de uso sem inicializar Spring nem banco.;"Pontuacao e fake testados com JUnit; mesmo resultado com JPA/H2."
+D2-A2;S;Testabilidade;Executar regra e caso de uso sem inicializar Spring nem banco.;"Pontuacao e fake testados com JUnit; 1203 pontos apos promocao real na AC1 com JPA/H2."
 D3-A1;S;Deploy independente;Separar o processo Python do Core para publicar modelos sem recompilar Java.;"Dockerfiles separados; endpoint FastAPI executado em processo distinto."
 D3-A2;R;Tolerância a falhas;Limitar espera da IA e responder com catálogo quando ela falhar.;HTTP 200 com origem python e, após queda, origem catalogo.
 D3-A3;P;Escalabilidade;Permitir ampliar réplicas da IA sem replicar todo o Core.;"Fronteira de processo presente; teste de carga ainda necessário."
@@ -14,5 +14,5 @@ D5-A1;P;Eficiência de comunicação;Usar publicação MQTT com mensagens pequen
 D5-A2;R;Conectividade intermitente;Exigir identificador estável, buffer e reenvio no dispositivo.;"Duplicata testada; buffer persistente e sessão durável ainda são trabalho da AF."
 D5-A3;F+;Segurança de integração;Isolar tópico por instituição e validar identidade e payload no gateway.;"Tópico institucional demonstrado; TLS/ACL ainda não exercitados no lab local."
 D6-A1;S;Observabilidade;Instrumentar falhas recuperadas, além do status HTTP.;ia_fallback_total aumenta mesmo quando a API responde 200.
-D6-A2;R;Confiabilidade de entrega;Bloquear implantação quando testes ou build falharem.;"Jenkinsfile sequencial sem ignorar falhas; Maven executado localmente."
-D6-A3;S;Recuperabilidade operacional;Versionar imagens/configuração e preparar retorno à versão anterior.;"JAR e configurações versionáveis; rollback em ambiente Jenkins ainda pendente."
+D6-A2;R;Confiabilidade de entrega;Bloquear implantação quando testes ou build falharem.;"Jenkins SUCCESS com 64 testes aprovados, nenhum ignorado, e validacao de APIs/metricas."
+D6-A3;R;Recuperabilidade operacional;Versionar imagens/configuração e preparar retorno à versão anterior.;"JAR e configurações versionáveis; rollback em ambiente Jenkins ainda pendente."
