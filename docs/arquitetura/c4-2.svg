@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="490" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 490" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="490"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-490)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="150" y="405" width="200" height="65" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="195.54931640625" y="453" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,906) scale(1,-1)">RankingRestController</text>
+			<text x="218.1104736328125" y="438" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,876) scale(1,-1)">Controller Spring</text>
+			<text x="202.2891845703125" y="426" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,852) scale(1,-1)">Mantém o contrato HTTP</text>
+			<rect x="150" y="285" width="200" height="65" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="212.48291015625" y="333" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,666) scale(1,-1)">RankingService</text>
+			<text x="226.1373291015625" y="318" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,636) scale(1,-1)">Caso de uso</text>
+			<text x="197.3211669921875" y="306" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,612) scale(1,-1)">Orquestra leitura e resposta</text>
+			<rect x="5" y="155" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="51.94091796875" y="213" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Pontuacao</text>
+			<text x="41.8294677734375" y="198" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">Domínio Java puro</text>
+			<text x="33.4415283203125" y="186" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,372) scale(1,-1)">cursos x 100 + moedas</text>
+			<rect x="180" y="155" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="222.77587890625" y="213" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">RankingPort</text>
+			<text x="210.917236328125" y="198" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">Interface da aplicação</text>
+			<text x="213.0484619140625" y="186" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,372) scale(1,-1)">Dados simples Linha</text>
+			<rect x="355" y="155" width="140" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="393.04443359375" y="213" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Fake do teste</text>
+			<text x="408.468994140625" y="198" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,396) scale(1,-1)">Memória</text>
+			<text x="388.3831787109375" y="186" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,372) scale(1,-1)">Implementa a porta</text>
+			<rect x="180" y="25" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="205.2685546875" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">RankingJpaAdapter</text>
+			<text x="207.8480224609375" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">Adapter de persistência</text>
+			<text x="209.9730224609375" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Mapeia entidades JPA</text>
+			<rect x="355" y="25" width="140" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="379.16015625" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">RankingRepository</text>
+			<text x="393.58154296875" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">Spring Data JPA</text>
+			<text x="395.4658203125" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Consulta banco</text>
+			<path d="M 250,405 L 250,350 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="250 350, 252.8766 355.2655, 247.1234 355.2655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="262.994140625" y="381.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,763) scale(1,-1)">chama</text>
+			<path d="M 180,285 L 78,230 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="78 230, 83.99991 229.9672, 81.2694 235.031" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="104.548828125" y="261.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,523) scale(1,-1)">calcula</text>
+			<path d="M 250,285 L 250,230 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="250 230, 252.8766 235.2655, 247.1234 235.2655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="263.427734375" y="261.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,523) scale(1,-1)">depende</text>
+			<path d="M 355,192 L 325,192 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="325 192, 330.2655 189.1234, 330.2655 194.8766" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="319.32421875" y="209.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,418) scale(1,-1)">implementa</text>
+			<path d="M 250,100 L 250,155 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="250 155, 247.1234 149.7345, 252.8766 149.7345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="267.32421875" y="131.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,263) scale(1,-1)">implementa</text>
+			<path d="M 325,62 L 355,62 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="355 62, 349.7345 64.87655, 349.7345 59.12345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="325.1015625" y="79.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,158) scale(1,-1)">consulta</text>
+		</g>
+	</g>
+</svg>

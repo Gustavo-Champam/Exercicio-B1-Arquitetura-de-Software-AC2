@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="480" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 480" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="480"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-480)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="5" width="500" height="455" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<text x="15" y="440" style="font-family: ArialBold; font-size: 12px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,880) scale(1,-1)">Host Windows do laboratório</text>
+			<rect x="20" y="325" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="74.70703125" y="383" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,766) scale(1,-1)">Processo Core</text>
+			<text x="70.3118896484375" y="368" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,736) scale(1,-1)">JDK 17 / Spring Boot</text>
+			<text x="57.78808593749999" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">Porta 8084 / H2 embarcado</text>
+			<rect x="300" y="325" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="361.0986328125" y="383" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,766) scale(1,-1)">Processo IA</text>
+			<text x="358.8201904296875" y="368" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,736) scale(1,-1)">Python / Uvicorn</text>
+			<text x="342.042236328125" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">Porta 8001 / interrompido</text>
+			<rect x="20" y="170" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="57.2021484375" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Processo Prometheus</text>
+			<text x="60.6165771484375" y="213" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Coleta a cada 5 segundos</text>
+			<text x="89.20654296875" y="201" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,402) scale(1,-1)">Porta 9093</text>
+			<rect x="300" y="170" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="347.2021484375" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Processo Grafana</text>
+			<text x="360.7086181640625" y="213" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Consulta séries</text>
+			<text x="369.20654296875" y="201" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,402) scale(1,-1)">Porta 3003</text>
+			<rect x="20" y="25" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="79.70703125" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">Processo A3</text>
+			<text x="70.3118896484375" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">JDK 17 / Spring Boot</text>
+			<text x="57.78808593749999" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Porta 8083 / H2 embarcado</text>
+			<rect x="300" y="25" width="180" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,97%); fill-rule: evenodd; stroke-dasharray: 4, 3;"/>
+			<text x="348.8671875" y="83" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,166) scale(1,-1)">Jenkins e Docker</text>
+			<text x="349.126953125" y="68" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,136) scale(1,-1)">Implantação proposta</text>
+			<text x="347.24267578125" y="56" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,112) scale(1,-1)">Jenkinsfile e Compose</text>
+			<path d="M 200,360 L 300,360 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="300 360, 294.7345 362.8766, 294.7345 357.1234" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="227.77734375" y="370.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,740) scale(1,-1)">HTTP JSON</text>
+			<path d="M 110,245 L 110,325 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="110 325, 107.1234 319.7345, 112.8766 319.7345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="126.439453125" y="289.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,578) scale(1,-1)">scrape HTTP</text>
+			<path d="M 110,170 L 110,100 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="110 100, 112.8766 105.2655, 107.1234 105.2655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="126.439453125" y="139.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,278) scale(1,-1)">scrape HTTP</text>
+			<path d="M 300,208 L 200,208 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="200 208, 205.2655 205.1234, 205.2655 210.8766" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="223.552734375" y="218.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,436) scale(1,-1)">PromQL HTTP</text>
+		</g>
+	</g>
+</svg>

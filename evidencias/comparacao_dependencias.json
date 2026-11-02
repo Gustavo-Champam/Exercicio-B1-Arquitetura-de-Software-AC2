@@ -1,0 +1,85 @@
+{
+  "camadas": {
+    "com/exemplo/usuario/controller/RankingRestController.java": [
+      "com.exemplo.usuario.dto.RankingResponseDTO",
+      "com.exemplo.usuario.service.RankingService",
+      "io.swagger.v3.oas.annotations.Operation",
+      "io.swagger.v3.oas.annotations.tags.Tag",
+      "org.springframework.web.bind.annotation.*",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/dto/RankingResponseDTO.java": [],
+    "com/exemplo/usuario/repository/RankingRepository.java": [
+      "com.exemplo.usuario.domain.Assinatura",
+      "org.springframework.data.jpa.repository.JpaRepository",
+      "org.springframework.data.jpa.repository.Query",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/service/RankingService.java": [
+      "com.exemplo.usuario.dto.RankingResponseDTO",
+      "com.exemplo.usuario.repository.RankingRepository",
+      "org.springframework.stereotype.Service",
+      "org.springframework.transaction.annotation.Transactional",
+      "java.util.List"
+    ]
+  },
+  "modular_referencia": {
+    "com/exemplo/usuario/ranking/package-info.java": [],
+    "com/exemplo/usuario/ranking/api/RankingResponseDTO.java": [],
+    "com/exemplo/usuario/ranking/api/RankingRestController.java": [
+      "com.exemplo.usuario.ranking.api.RankingResponseDTO",
+      "com.exemplo.usuario.ranking.application.RankingService",
+      "io.swagger.v3.oas.annotations.Operation",
+      "io.swagger.v3.oas.annotations.tags.Tag",
+      "org.springframework.web.bind.annotation.*",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/application/RankingService.java": [
+      "com.exemplo.usuario.ranking.api.RankingResponseDTO",
+      "com.exemplo.usuario.ranking.internal.persistence.RankingRepository",
+      "org.springframework.stereotype.Service",
+      "org.springframework.transaction.annotation.Transactional",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java": [
+      "com.exemplo.usuario.usuario.domain.Assinatura",
+      "org.springframework.data.jpa.repository.JpaRepository",
+      "org.springframework.data.jpa.repository.Query",
+      "java.util.List"
+    ]
+  },
+  "evoluido": {
+    "com/exemplo/usuario/ranking/package-info.java": [],
+    "com/exemplo/usuario/ranking/api/RankingResponseDTO.java": [],
+    "com/exemplo/usuario/ranking/api/RankingRestController.java": [
+      "com.exemplo.usuario.ranking.api.RankingResponseDTO",
+      "com.exemplo.usuario.ranking.application.RankingService",
+      "io.swagger.v3.oas.annotations.Operation",
+      "io.swagger.v3.oas.annotations.tags.Tag",
+      "org.springframework.web.bind.annotation.*",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/application/RankingPort.java": [
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/application/RankingService.java": [
+      "com.exemplo.usuario.ranking.api.RankingResponseDTO",
+      "com.exemplo.usuario.ranking.domain.Pontuacao",
+      "org.springframework.stereotype.Service",
+      "org.springframework.transaction.annotation.Transactional",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/domain/Pontuacao.java": [],
+    "com/exemplo/usuario/ranking/internal/persistence/RankingJpaAdapter.java": [
+      "com.exemplo.usuario.ranking.application.RankingPort",
+      "org.springframework.stereotype.Component",
+      "java.util.List"
+    ],
+    "com/exemplo/usuario/ranking/internal/persistence/RankingRepository.java": [
+      "com.exemplo.usuario.usuario.domain.Assinatura",
+      "org.springframework.data.jpa.repository.JpaRepository",
+      "org.springframework.data.jpa.repository.Query",
+      "java.util.List"
+    ]
+  }
+}

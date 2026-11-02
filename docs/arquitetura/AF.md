@@ -1,0 +1,3 @@
+# Síntese para a Avaliação Final
+
+Para a AF, levaremos o monólito modular, a porta de ranking e a fronteira Python com timeout/fallback. Integrar a outbox ao fluxo real de conclusão e persistir a deduplicação no consumidor. Conectar o gateway ao Core, adicionar ACL/TLS e testar desconexão/reinício. Evoluir recomendação de fixture para modelo e RAG com avaliação de resposta. Validar isolamento por instituição e paginação de ranking. Executar a esteira Jenkins, testar rollback e medir p95/throughput com uma carga explicitamente definida. Não extrair ranking nem adotar Kafka antes de medir o gargalo.

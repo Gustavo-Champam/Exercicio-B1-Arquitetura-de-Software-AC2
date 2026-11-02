@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="500" height="530" preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 530" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="500" height="530"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-530)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="170" y="450" width="160" height="65" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="196.9384765625" y="498" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,996) scale(1,-1)">Aluno e administrador</text>
+			<text x="235.8243408203125" y="483" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,966) scale(1,-1)">Pessoa</text>
+			<text x="191.4068603515625" y="471" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,942) scale(1,-1)">Acessa interface no navegador</text>
+			<rect x="170" y="320" width="160" height="80" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="204.43359375" y="383" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,766) scale(1,-1)">Core da plataforma</text>
+			<text x="215.2716064453125" y="368" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,736) scale(1,-1)">Java / Spring Boot</text>
+			<text x="200.398681640625" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">Cursos, matrícula, ranking</text>
+			<text x="220.943115234375" y="344" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,688) scale(1,-1)">Processo único</text>
+			<rect x="5" y="170" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="37.4853515625" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Banco relacional</text>
+			<text x="44.8966064453125" y="213" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">H2 no laboratório</text>
+			<text x="39.4637451171875" y="201" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,402) scale(1,-1)">PostgreSQL no alvo</text>
+			<text x="43.006103515625" y="189" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,378) scale(1,-1)">Dados de domínio</text>
+			<rect x="350" y="320" width="145" height="80" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="390.8203125" y="383" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,766) scale(1,-1)">Serviço de IA</text>
+			<text x="390.6104736328125" y="368" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,736) scale(1,-1)">Python / FastAPI</text>
+			<text x="365.095947265625" y="356" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,712) scale(1,-1)">Recomendação determinística</text>
+			<text x="390.36767578125" y="344" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,688) scale(1,-1)">Deploy separado</text>
+			<rect x="170" y="170" width="160" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,97%); fill-rule: evenodd; stroke-dasharray: 4, 3;"/>
+			<text x="214.7216796875" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Worker outbox</text>
+			<text x="194.015380859375" y="213" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Microsolução Python / SQLite</text>
+			<text x="217.8656005859375" y="201" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,402) scale(1,-1)">Entrega eventual</text>
+			<text x="217.86767578125" y="189" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,378) scale(1,-1)">Integração futura</text>
+			<rect x="350" y="170" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,96%,97%); fill-rule: evenodd; stroke-dasharray: 4, 3;"/>
+			<text x="376.3720703125" y="228" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,456) scale(1,-1)">Notificação externa</text>
+			<text x="374.550537109375" y="213" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,426) scale(1,-1)">Consumidor HTTP do lab</text>
+			<text x="383.5174560546875" y="201" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,402) scale(1,-1)">Falha e recuperação</text>
+			<rect x="5" y="20" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="50.5517578125" y="78" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,156) scale(1,-1)">Dispositivo</text>
+			<text x="39.229248046875" y="63" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,126) scale(1,-1)">Publicador simulado</text>
+			<text x="35.684814453125" y="51" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,102) scale(1,-1)">Eventos com event_id</text>
+			<rect x="180" y="20" width="140" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="218.330078125" y="78" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,156) scale(1,-1)">Broker MQTT</text>
+			<text x="225.6766357421875" y="63" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,126) scale(1,-1)">aMQTT local</text>
+			<text x="237.951416015625" y="51" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,102) scale(1,-1)">QoS 1</text>
+			<rect x="350" y="20" width="145" height="75" rx="5" ry="5" style="stroke: rgb(37%,44%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<text x="393.046875" y="78" style="font-family: ArialBold; font-size: 10px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,156) scale(1,-1)">Gateway IoT</text>
+			<text x="383.0526123046875" y="63" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,126) scale(1,-1)">Python / paho MQTT</text>
+			<text x="377.8521728515625" y="51" style="font-family: Arial; font-size: 8.5px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,102) scale(1,-1)">Transforma e deduplica</text>
+			<path d="M 250,450 L 250,400 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="250 400, 252.8766 405.2655, 247.1234 405.2655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="269.556640625" y="429.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,858) scale(1,-1)">HTTP</text>
+			<path d="M 170,340 L 78,245 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="78 245, 83.72946 246.7814, 79.59667 250.7837" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="88.5546875" y="296.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,593) scale(1,-1)">JDBC</text>
+			<path d="M 330,360 L 350,360 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="350 360, 344.7345 362.8766, 344.7345 357.1234" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="317.77734375" y="384.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,768) scale(1,-1)">HTTP JSON</text>
+			<path d="M 250,320 L 250,245 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="250 245, 252.8766 250.2655, 247.1234 250.2655" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="264.650390625" y="286.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,573) scale(1,-1)">planejado</text>
+			<path d="M 330,208 L 350,208 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="350 208, 344.7345 210.8766, 344.7345 205.1234" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="329.556640625" y="223.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,446) scale(1,-1)">HTTP</text>
+			<path d="M 150,57 L 180,57 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="180 57, 174.7345 59.87655, 174.7345 54.12345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="153.669921875" y="69.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,138) scale(1,-1)">MQTT</text>
+			<path d="M 320,57 L 350,57 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="350 57, 344.7345 59.87655, 344.7345 54.12345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="323.669921875" y="69.0" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,138) scale(1,-1)">MQTT</text>
+			<path d="M 423,95 L 490,95 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<path d="M 490,95 L 490,275 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<path d="M 490,275 L 300,275 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<path d="M 300,275 L 300,320 Z" style="stroke: rgb(32%,37%,43%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 4, 3;"/>
+			<polygon points="300 320, 297.1234 314.7345, 302.8766 314.7345" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,37%,43%); fill-rule: evenodd;"/>
+			<text x="314.990234375" y="301.5" style="font-family: Arial; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,603) scale(1,-1)">Core futuro</text>
+		</g>
+	</g>
+</svg>
