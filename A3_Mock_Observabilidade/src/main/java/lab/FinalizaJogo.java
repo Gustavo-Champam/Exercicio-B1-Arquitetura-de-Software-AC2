@@ -16,8 +16,20 @@ import org.springframework.stereotype.Service;
   if(lote.isEmpty()) return 0;
   banco.salvar(lote);
   // Nao anotar este metodo com @Transactional: SMS deve ocorrer apos o commit do lote.
-  lote.forEach(sms::enviar);
-  lote.forEach(email::enviar);
+  // Uma falha externa nao deve impedir a tentativa dos outros avisos ja persistidos.
+  var falhas=new java.util.ArrayList<RuntimeException>();
+  for(var jogo:lote) {
+   tentar(()->sms.enviar(jogo),falhas);
+   tentar(()->email.enviar(jogo),falhas);
+  }
+  if(!falhas.isEmpty()) {
+   var erro=new IllegalStateException("Jogos salvos; uma ou mais notificacoes falharam");
+   falhas.forEach(erro::addSuppressed);
+   throw erro;
+  }
   return lote.size();
+ }
+ private void tentar(Runnable envio,java.util.List<RuntimeException> falhas) {
+  try { envio.run(); } catch(RuntimeException falha) { falhas.add(falha); }
  }
 }

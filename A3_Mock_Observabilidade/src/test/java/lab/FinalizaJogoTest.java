@@ -15,7 +15,11 @@ class FinalizaJogoTest {
   assertEquals(2,app.finalizar(List.of(jogo(1,"2026-10-19"),jogo(2,"2026-10-25")),hoje));
   var ordem=inOrder(banco,sms,email);
   ordem.verify(banco).salvar(argThat(l -> l.size()==2 && l.get(0).getId()==1 && l.get(0).getVencedor().equals("Ana")));
-  ordem.verify(sms,times(2)).enviar(any()); ordem.verify(email,times(2)).enviar(any()); ordem.verifyNoMoreInteractions();
+  ordem.verify(sms).enviar(argThat(j->j.getId()==1 && j.getVencedor().equals("Ana")));
+  ordem.verify(email).enviar(argThat(j->j.getId()==1 && j.getVencedor().equals("Ana")));
+  ordem.verify(sms).enviar(argThat(j->j.getId()==2 && j.getVencedor().equals("Ana")));
+  ordem.verify(email).enviar(argThat(j->j.getId()==2 && j.getVencedor().equals("Ana")));
+  ordem.verifyNoMoreInteractions();
  }
  @Test void falhaAoSalvarNaoEnviaSms() {
   doThrow(new IllegalStateException("falha no commit")).when(banco).salvar(anyList());
@@ -44,5 +48,16 @@ class FinalizaJogoTest {
   doThrow(new IllegalStateException("provedor indisponivel")).when(sms).enviar(any());
   assertThrows(IllegalStateException.class,()->app.finalizar(List.of(jogo(1,"2026-10-20")),hoje));
   var ordem=inOrder(banco,sms,email);ordem.verify(banco).salvar(anyList());ordem.verify(sms).enviar(any());
+  ordem.verify(email).enviar(any());
+ }
+ @Test void falhasDeAmbosCanaisNaoImpedemTentativasDoSegundoVencedor() {
+  doThrow(new IllegalStateException("sms indisponivel")).when(sms).enviar(any());
+  doThrow(new IllegalStateException("email indisponivel")).when(email).enviar(any());
+  var erro=assertThrows(IllegalStateException.class,()->app.finalizar(List.of(jogo(1,"2026-10-20"),jogo(2,"2026-10-21")),hoje));
+  assertEquals(4,erro.getSuppressed().length);verify(banco).salvar(anyList());verify(sms,times(2)).enviar(any());verify(email,times(2)).enviar(any());
+ }
+ @Test void quartaFeiraTambemSelecionaSemanaCalendarioAnterior() {
+  assertEquals(1,app.finalizar(List.of(jogo(1,"2026-10-25"),jogo(2,"2026-10-26")),LocalDate.of(2026,10,28)));
+  verify(sms).enviar(argThat(j->j.getId()==1));verify(email).enviar(argThat(j->j.getId()==1));
  }
 }

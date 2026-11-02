@@ -18,5 +18,13 @@ import static org.mockito.Mockito.*;
   verify(sms).enviar(any()); verify(email).enviar(any());
  }
  @Test void adapterSmsDidaticoExecuta() { new SmsLog().enviar(new Finalizado(8,"Bia")); new EmailLog().enviar(new Finalizado(8,"Bia")); }
+ @Test void falhaRealNoFlushReverteLoteENaoNotifica() {
+  long antes=repo.count();
+  var data=LocalDate.of(2026,10,20);
+  var jogos=List.of(new Jogo(401,data,List.of(new Jogo.Resultado("Ana",30))),new Jogo(402,data,List.of(new Jogo.Resultado(null,10))));
+  assertThrows(org.springframework.dao.DataIntegrityViolationException.class,()->app.finalizar(jogos,LocalDate.of(2026,10,26)));
+  assertEquals(antes,repo.count());assertTrue(repo.findById(401L).isEmpty());
+  verifyNoInteractions(sms,email);
+ }
  @Test void bootstrapReal() { Application.main(new String[]{"--server.port=0","--spring.main.web-application-type=none"}); }
 }

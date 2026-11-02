@@ -1,8 +1,7 @@
 services:
   core:
-    build: ./core
+    build: ./ac1
     environment:
-      SPRING_PROFILES_ACTIVE: h2
       IA_URL: http://ia:8001
     ports: ['127.0.0.1:8084:8080']
   ia:
